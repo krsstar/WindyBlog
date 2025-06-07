@@ -9,12 +9,9 @@
   </head>
   <body>
 
-<nav>
-<img src="windy.jpg" alt="WINDY" class="photo" />
-
+<nav class="sticky-nav">
 <button class="hamburger" id="hamburger">&#9776;</button>
-
-<ul>
+<ul class="nav-links" id="nav-links">
    <li><a href="#home">Home</a></li>
    <li><a href="#about">About</a></li>
    <li><a href="#works">Works</a></li>
@@ -23,7 +20,8 @@
 </nav>
 
 <header class="header-container">
-<div class="header-text"> <h1>Hello, It's WINDY!</h1> </div>
+  <img src="windy.jpg" alt="WINDY" class="header-photo" />
+  <div class="header-text"> <h1>Hello, It's WINDY!</h1> </div>
 </header>
 
   <main>
@@ -34,14 +32,14 @@
 Thanks for stopping by. This is my little corner of the internet where I turn ideas into interactive experiences.</p> </div>
 
 <div class="section" id="about">
-<h2>ABOUT</h2> <p>Hey there, I’m Windy!<br>
+<h2>ABOUT</h2> <p>Hey there, I'm Windy!<br>
 Part-time student coder, full-time strawberry enthusiast, and forever curious about how the web works.
-I’m a Computer Science student at STI West Negros University with a love for designing sleek, smart, and slightly magical websites.
-Whether it’s HTML, CSS, or chasing down bugs like a detective on a mission — I’m all in!
-Take a scroll, explore my creations, and let’s make something awesome together.  <br>
+I'm a Computer Science student at STI West Negros University with a love for designing sleek, smart, and slightly magical websites.
+Whether it's HTML, CSS, or chasing down bugs like a detective on a mission — I'm all in!
+Take a scroll, explore my creations, and let's make something awesome together.  <br>
 </div>
   <div class="section" id="works">
-   <h2>MY WORKS</h2> <p>Welcome to my little corner of creativity! Here, I transform ideas into colorful, interactive experiences that make the web a brighter place. From sleek websites to clever apps, every project is sprinkled with a bit of Windy’s special flair.
+   <h2>MY WORKS</h2> <p>Welcome to my little corner of creativity! Here, I transform ideas into colorful, interactive experiences that make the web a brighter place. From sleek websites to clever apps, every project is sprinkled with a bit of Windy's special flair.
 
 Code Wizardry: Turning lines of code into smooth, responsive designs that dance on any screen.
 
@@ -66,4 +64,22 @@ Dive in, explore my projects, and get inspired by what happens when passion meet
 </div>
 </div>
 </main>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+</script>
 </body>
+</html>
